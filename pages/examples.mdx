@@ -1,0 +1,24 @@
+# Examples
+
+## Complete Example: Wallet Operations
+```javascript
+import { SOONClient, generateKeypair, getBalance, Transactions } from 'solana-soon-sdk';
+
+(async () => {
+  const client = new SOONClient();
+  const wallet = generateKeypair();
+  console.log('Generated Wallet:', wallet);
+
+  const balance = await getBalance(wallet.publicKey, client);
+  console.log('Balance:', balance, 'SOL');
+
+  const txSignature = await Transactions.sendTransaction(
+    wallet.privateKey,
+    'ReceiverPublicKey',
+    0.01,
+    client
+  );
+  console.log('Transaction Signature:', txSignature);
+})();
+yaml
+Copy code

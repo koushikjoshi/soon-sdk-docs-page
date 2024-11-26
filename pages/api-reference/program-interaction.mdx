@@ -1,0 +1,15 @@
+# Program Interaction
+
+### `callProgram(programId, client)`
+Calls a Solana program and retrieves account data.
+
+#### Parameters:
+- **programId**: The ID of the program to call.
+- **client**: An instance of `SOONClient`.
+
+### Example
+```javascript
+const programData = await Contracts.callProgram('ProgramID', client);
+console.log('Program Data:', programData);
+yaml
+Copy code

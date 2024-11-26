@@ -1,0 +1,19 @@
+:root {
+    --nextra-primary: hsla(349, 67%, 51%);
+    --nextra-secondary: hsla(349, 40%, 45%);
+    --nextra-background: #000000; /* Black background */
+    --nextra-text: #ffffff; /* White text */
+    --nextra-muted: hsla(349, 20%, 20%);
+    --nextra-border: hsla(349, 67%, 30%);
+  }
+  
+  [data-theme="dark"] {
+    --nextra-background: #000000;
+    --nextra-text: #ffffff;
+  }
+  
+  [data-theme="light"] {
+    --nextra-background: #ffffff;
+    --nextra-text: #000000;
+  }
+  

@@ -1,0 +1,16 @@
+# Advanced Usage
+
+## Solana RPC Endpoint Configuration
+The SDK connects to the SOON network via Solana RPC. Ensure your environment uses the correct endpoint:
+`https://rpc.devnet.soo.network/rpc`
+
+## Handling Errors
+Always wrap SDK calls in try-catch blocks to handle errors effectively.
+```javascript
+try {
+  const balance = await getBalance('PublicKey', client);
+} catch (error) {
+  console.error('Error fetching balance:', error);
+}
+javascript
+Copy code

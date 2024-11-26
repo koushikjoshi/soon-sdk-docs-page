@@ -1,0 +1,54 @@
+# Getting Started
+
+This guide will walk you through setting up the Solana SOON SDK and performing basic operations like generating a wallet, querying balances, and sending transactions.
+
+## Importing the SDK
+```javascript
+import { SOONClient, generateKeypair, getBalance, Transactions, Contracts } from 'solana-soon-sdk';
+```
+
+## Initializing the Client
+Create a client to connect to the Solana network.
+
+```
+const client = new SOONClient();
+```
+
+## Generating a Wallet
+Generate a new Solana wallet.
+
+```
+const wallet = generateKeypair();
+console.log('Generated Wallet:', wallet);
+```
+
+## Querying Account Balance
+Retrieve the SOL balance of a given account.
+
+```
+const balance = await getBalance('PublicKey', client);
+console.log('Balance:', balance, 'SOL');
+```
+
+## Sending a Transaction
+Transfer SOL from one account to another.
+
+```
+const txSignature = await Transactions.sendTransaction(
+  'SenderPrivateKey',
+  'ReceiverPublicKey',
+  0.01,
+  client
+);
+console.log('Transaction Signature:', txSignature);
+```
+
+## Calling a Program
+Interact with Solana programs (smart contracts).
+
+```
+const programData = await Contracts.callProgram('ProgramID', client);
+console.log('Program Data:', programData);
+```
+
+

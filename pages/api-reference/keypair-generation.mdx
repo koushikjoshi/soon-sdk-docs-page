@@ -1,0 +1,13 @@
+# Keypair Generation
+
+### `generateKeypair()`
+Generates a new Solana wallet.
+
+#### Returns:
+- **Public Key**: The wallet's public key.
+- **Private Key**: The wallet's private key (keep this secret).
+
+### Example
+```javascript
+const wallet = generateKeypair();
+console.log(wallet.publicKey, wallet.privateKey);

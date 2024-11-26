@@ -1,0 +1,15 @@
+# Balance Queries
+
+### `getBalance(publicKey, client)`
+Retrieves the SOL balance of a given account.
+
+#### Parameters:
+- **publicKey**: The account's public key.
+- **client**: An instance of `SOONClient`.
+
+### Example
+```javascript
+const balance = await getBalance('PublicKey', client);
+console.log('Balance:', balance, 'SOL');
+python
+Copy code
