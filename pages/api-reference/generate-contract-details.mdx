@@ -1,0 +1,41 @@
+# Generate Contract Details
+
+The `getContractDetails` method retrieves details about a specific contract on the Solana network.
+
+## Syntax
+```javascript
+const contractDetails = await getContractDetails('YourContractAddress');
+```
+
+## Parameters
+- YourContractAddress: The public key address of the contract whose details you want to retrieve.
+
+## Returns
+An object containing the following contract details:
+
+- programId: The ID of the program associated with the contract.
+- data: Raw data of the contract account.
+- lamports: The amount of SOL in the account.
+- owner: The public key of the contract's owner.
+
+## Example
+```
+import { getContractDetails } from 'solana-soon-sdk';
+
+(async () => {
+  const contractDetails = await getContractDetails('YourContractAddress');
+  console.log('Contract Details:', contractDetails);
+})();
+```
+
+## Sample Output
+```
+{
+  "programId": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "data": "Base64EncodedData",
+  "lamports": 2039280,
+  "owner": "ContractOwnerPublicKey"
+}
+```
+
+Use this method to explore details of smart contracts deployed on the Solana network.

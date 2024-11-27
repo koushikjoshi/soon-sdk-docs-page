@@ -1,0 +1,58 @@
+# Generate Token Accounts by Owner
+
+The `getTokenAccountsByOwner` method fetches all token accounts owned by a specific wallet address for a given token program.
+
+## Syntax
+```
+const tokenAccounts = await getTokenAccountsByOwner('YourWalletAddress', 'YourTokenProgramId');
+```
+
+## Parameters
+- YourWalletAddress: The public key of the wallet whose token accounts you want to fetch.
+- YourTokenProgramId: The public key of the token program (e.g., SPL Token Program).
+
+## Returns
+An array of token accounts, each containing:
+
+- address: The token account's address.
+- amount: The amount of tokens held.
+- mint: The mint address of the token.
+- owner: The wallet address that owns the token account.
+
+## Example
+
+```
+import { getTokenAccountsByOwner } from 'solana-soon-sdk';
+
+(async () => {
+  const tokenAccounts = await getTokenAccountsByOwner(
+    'YourWalletAddress',
+    'YourTokenProgramId'
+  );
+  console.log('Token Accounts:', tokenAccounts);
+})();
+```
+
+## Sample Output
+```
+[
+  {
+    "address": "TokenAccountAddress1",
+    "amount": "100",
+    "mint": "TokenMintAddress",
+    "owner": "YourWalletAddress"
+  },
+  {
+    "address": "TokenAccountAddress2",
+    "amount": "50",
+    "mint": "TokenMintAddress",
+    "owner": "YourWalletAddress"
+  }
+]
+```
+
+This method is particularly useful for:
+
+## Fetching token balances associated with a wallet.
+- Identifying token accounts for a specific program.
+- Ensure you provide a valid TokenProgramId, such as the SPL Token Program ID: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VXXXX.
